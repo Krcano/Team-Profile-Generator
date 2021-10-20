@@ -173,7 +173,7 @@ function createHtml() {
       <p>ID: ${engineersArrayElement.getId()}</p>
     </div>
     <div class="employee-descriptions">
-      <p>Email:<a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
+      <p>Email: <a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
     </div>
     <div class="employee-descriptions">
       <p>Office: ${engineersArrayElement.getOfficeNumber()}</p>
@@ -191,7 +191,7 @@ function createHtml() {
           <p>ID: ${engineersArrayElement.getId()}</p>
         </div>
         <div class="employee-descriptions">
-        <p>Email:<a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
+        <p>Email: <a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
         </div>
         <div class="employee-descriptions">
           <p>Github: <a href=https://github.com/${engineersArrayElement.getGithub()}>${engineersArrayElement.getGithub()}</a></p>
@@ -210,7 +210,7 @@ function createHtml() {
       <p>ID: ${engineersArrayElement.getId()}</p>
     </div>
     <div class="employee-descriptions">
-    <p>Email:<a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
+    <p>Email: <a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
     </div>
     <div class="employee-descriptions">
       <p>School: ${engineersArrayElement.getSchool()}</p>

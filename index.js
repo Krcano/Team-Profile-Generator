@@ -1,14 +1,14 @@
 const fs = require("fs");
 const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
-
-// let me = new Engineer("Brett", 1, "email@email.com", "brett git");
-// let you = new Engineer("Kelly", 2, "email2@email.com", "kelly git")
 
 const managers = [];
 const engineers = [];
 const interns = [];
 
+// asks for employee type
 function start() {
   inquirer
     .prompt({
@@ -25,47 +25,128 @@ function start() {
       } else if (data.employeeType === "Intern") {
         createIntern();
       } else {
-          createHtml();
+        createHtml();
       }
     });
 }
+// Manager Inquirer Prompts
+function createManager() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "Employeename",
+        message: "What is the employee's name?",
+      },
 
-function createEngineer() {
-  inquirer.prompt([
-    {
-      type: "input",
-      name: "Employeename",
-      message: "What is the employee's name?",
-    },
-    
-    {
-      type: "input",
-      name: "EmployeeId",
-      message: "What is their employee id number",
-    },
-    {
-      type: "input",
-      name: "Email",
-      message: "What is their email?",
-    },
-    {
-      type: "input",
-      name: "Github",
-      message: "What is their github?",
-    },
-  ])
-  .then(data =>{
-      let newEngineer = new Engineer(data.Employeename, data.EmployeeId, data.Email, data.Github)
-      engineers.push(newEngineer)
-      start()
-  })
- 
+      {
+        type: "input",
+        name: "EmployeeId",
+        message: "What is their employee id number",
+      },
+      {
+        type: "input",
+        name: "Email",
+        message: "What is their email?",
+      },
+      {
+        type: "input",
+        name: "OfficeNumber",
+        message: "What is their office number?",
+      },
+    ])
+    .then((data) => {
+      let newManager = new Manager(
+        data.Employeename,
+        data.EmployeeId,
+        data.Email,
+        data.OfficeNumber
+      );
+      managers.push(newManager);
+
+      start();
+    });
 }
 
-function createHtml(){
+// Engineer inquirer Prompts
+function createEngineer() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "Employeename",
+        message: "What is the employee's name?",
+      },
 
-    let html = 
-    `<!DOCTYPE html>
+      {
+        type: "input",
+        name: "EmployeeId",
+        message: "What is their employee id number",
+      },
+      {
+        type: "input",
+        name: "Email",
+        message: "What is their email?",
+      },
+      {
+        type: "input",
+        name: "Github",
+        message: "What is their github?",
+      },
+    ])
+    .then((data) => {
+      let newEngineer = new Engineer(
+        data.Employeename,
+        data.EmployeeId,
+        data.Email,
+        data.Github
+      );
+      engineers.push(newEngineer);
+
+      start();
+    });
+}
+// Intern quirer prompts
+function createIntern() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "Employeename",
+        message: "What is the employee's name?",
+      },
+
+      {
+        type: "input",
+        name: "EmployeeId",
+        message: "What is their employee id number",
+      },
+      {
+        type: "input",
+        name: "Email",
+        message: "What is their email?",
+      },
+      {
+        type: "input",
+        name: "School",
+        message: "What school are they attending?",
+      },
+    ])
+    .then((data) => {
+      let newIntern = new Intern(
+        data.Employeename,
+        data.EmployeeId,
+        data.Email,
+        data.School
+      );
+      interns.push(newIntern);
+
+      start();
+    });
+}
+// Creates html cards for each type of employee
+function createHtml() {
+  let html = `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -80,23 +161,27 @@ function createHtml(){
          
         </header>
         <div class="all-card-container">
-       `
-    // managers.forEach(engineersArrayElement =>{
-    //     html += 
-    //     `<div>
-    //     <h1>${engineersArrayElement.getName()}</h1>
-    //     <h2>${engineersArrayElement.getRole()}</h2>
-    //   <div>
-    //      <p>${engineersArrayElement.getId()}</p> 
-    //      <p>${engineersArrayElement.getEmail()}</p>
-    //      <p>${engineersArrayElement.getGithub()}</p>
-    //   </div>
-    // </div>`
-    // }) 
-    engineers.forEach(engineersArrayElement =>{
-        html += 
-
-        `
+       `;
+  managers.forEach((engineersArrayElement) => {
+    html += `
+    <div class="individual-card-container">
+    <h1 class="name-role">${engineersArrayElement.getName()}</h1>
+    <h2 class="name-role">${engineersArrayElement.getRole()}</h2>
+  <div class="employee-descriptions-container">
+    <div class="employee-descriptions">
+      <p>ID: ${engineersArrayElement.getId()}</p>
+    </div>
+    <div class="employee-descriptions">
+      <p>Email: ${engineersArrayElement.getEmail()}</p>
+    </div>
+    <div class="employee-descriptions">
+      <p>Office: ${engineersArrayElement.getOfficeNumber()}</p>
+    </div>
+    </div>
+    </div>`;
+  });
+  engineers.forEach((engineersArrayElement) => {
+    html += `
         <div class="individual-card-container">
         <h1 class="name-role">${engineersArrayElement.getName()}</h1>
         <h2 class="name-role">${engineersArrayElement.getRole()}</h2>
@@ -108,23 +193,38 @@ function createHtml(){
           <p>Email: ${engineersArrayElement.getEmail()}</p>
         </div>
         <div class="employee-descriptions">
-          <p>${engineersArrayElement.getGithub()}</p>
+          <p>Github: ${engineersArrayElement.getGithub()}</p>
         </div>
         </div>
         </div>
-        
-      `
-    })
-   html += 
-   
-   `
+      `;
+  });
+  interns.forEach((engineersArrayElement) => {
+    html += 
+    `<div class="individual-card-container">
+    <h1 class="name-role">${engineersArrayElement.getName()}</h1>
+    <h2 class="name-role">${engineersArrayElement.getRole()}</h2>
+  <div class="employee-descriptions-container">
+    <div class="employee-descriptions">
+      <p>ID: ${engineersArrayElement.getId()}</p>
+    </div>
+    <div class="employee-descriptions">
+      <p>Email: ${engineersArrayElement.getEmail()}</p>
+    </div>
+    <div class="employee-descriptions">
+      <p>School: ${engineersArrayElement.getSchool()}</p>
+    </div>
+    </div>
+    </div>`;
+  });
+  html += `
    </div>
    </div>
    </body>
-   </html>` 
+   </html>`;
 
-   fs.writeFile(`./dist/index.html`, html, err =>{
-       console.log(err)
-   })
+  fs.writeFile(`./dist/index.html`, html, (err) => {
+    console.log(err);
+  });
 }
-start()
+start();

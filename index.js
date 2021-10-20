@@ -15,7 +15,7 @@ function start() {
       type: "list",
       name: "employeeType",
       message: "What type of employee do you want to add?",
-      choices: ["Manager", "Engineer", "Intern", "exit"],
+      choices: ["Manager", "Engineer", "Intern", "Exit"],
     })
     .then((data) => {
       if (data.employeeType === "Manager") {
@@ -56,6 +56,7 @@ function createManager() {
       },
     ])
     .then((data) => {
+     
       let newManager = new Manager(
         data.Employeename,
         data.EmployeeId,
@@ -172,7 +173,7 @@ function createHtml() {
       <p>ID: ${engineersArrayElement.getId()}</p>
     </div>
     <div class="employee-descriptions">
-      <p>Email: ${engineersArrayElement.getEmail()}</p>
+      <p>Email:<a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
     </div>
     <div class="employee-descriptions">
       <p>Office: ${engineersArrayElement.getOfficeNumber()}</p>
@@ -190,10 +191,10 @@ function createHtml() {
           <p>ID: ${engineersArrayElement.getId()}</p>
         </div>
         <div class="employee-descriptions">
-          <p>Email: ${engineersArrayElement.getEmail()}</p>
+        <p>Email:<a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
         </div>
         <div class="employee-descriptions">
-          <p>Github: ${engineersArrayElement.getGithub()}</p>
+          <p>Github: <a href=https://github.com/${engineersArrayElement.getGithub()}>${engineersArrayElement.getGithub()}</a></p>
         </div>
         </div>
         </div>
@@ -209,7 +210,7 @@ function createHtml() {
       <p>ID: ${engineersArrayElement.getId()}</p>
     </div>
     <div class="employee-descriptions">
-      <p>Email: ${engineersArrayElement.getEmail()}</p>
+    <p>Email:<a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
     </div>
     <div class="employee-descriptions">
       <p>School: ${engineersArrayElement.getSchool()}</p>

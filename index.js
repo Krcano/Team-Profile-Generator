@@ -98,7 +98,6 @@ function createHtml(){
 
         `
         <div class="individual-card-container">
-        <div class="employee-descriptions-container">
         <h1 class="name-role">${engineersArrayElement.getName()}</h1>
         <h2 class="name-role">${engineersArrayElement.getRole()}</h2>
       <div class="employee-descriptions-container">
@@ -110,22 +109,16 @@ function createHtml(){
         </div>
         <div class="employee-descriptions">
           <p>${engineersArrayElement.getGithub()}</p>
-        </div>\n
         </div>
+        </div>
+        </div>
+        
       `
-    //     `<div>
-    //     <h1>${engineersArrayElement.getName()}</h1>
-    //     <h2>${engineersArrayElement.getRole()}</h2>
-    //   <div>
-    //      <p>${engineersArrayElement.getId()}</p> 
-    //      <p>${engineersArrayElement.getEmail()}</p>
-    //      <p>${engineersArrayElement.getGithub()}</p>
-    //   </div>
-    // </div>`
     })
    html += 
    
    `
+   </div>
    </div>
    </body>
    </html>` 

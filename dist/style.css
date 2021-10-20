@@ -10,15 +10,16 @@ header {
   background-color: cornflowerblue;
   color: white;
   width: 18em;
+  margin-top: 2em;
 }
 .name-role{
     padding-left: 1em;
 }
 .all-card-container {
-  border: red 1px solid;
   flex-direction: row;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .employee-descriptions-container {
   background-color: whitesmoke;

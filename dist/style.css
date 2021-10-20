@@ -1,9 +1,32 @@
-header{
-    color: salmon;
-    border-bottom: black 5px solid;
+header {
+  color: salmon;
+  border-bottom: black 5px solid;
+  text-align: center;
 }
-h1{
-    height: 4rem;
-    align-content: center;
-    text-align: center;
+.title{
+    height: 2em;
+}
+.individual-card-container {
+  background-color: cornflowerblue;
+  color: white;
+  width: 18em;
+}
+.name-role{
+    padding-left: 1em;
+}
+.all-card-container {
+  border: red 1px solid;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+}
+.employee-descriptions-container {
+  background-color: whitesmoke;
+  padding: 2em;
+}
+.employee-descriptions {
+  background-color: white;
+  color: black;
+  border: black 1px solid;
+  margin: 1em;
 }

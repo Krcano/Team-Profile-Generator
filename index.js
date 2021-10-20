@@ -79,6 +79,7 @@ function createHtml(){
             <h1>My Team Profiles</h1>
          
         </header>
+        <div class="all-card-container">
        `
     // managers.forEach(engineersArrayElement =>{
     //     html += 
@@ -94,18 +95,39 @@ function createHtml(){
     // }) 
     engineers.forEach(engineersArrayElement =>{
         html += 
-        `<div>
-        <h1>${engineersArrayElement.getName()}</h1>
-        <h2>${engineersArrayElement.getRole()}</h2>
-      <div>
-         <p>${engineersArrayElement.getId()}</p> 
-         <p>${engineersArrayElement.getEmail()}</p>
-         <p>${engineersArrayElement.getGithub()}</p>
-      </div>
-    </div>`
+
+        `
+        <div class="individual-card-container">
+        <div class="employee-descriptions-container">
+        <h1 class="name-role">${engineersArrayElement.getName()}</h1>
+        <h2 class="name-role">${engineersArrayElement.getRole()}</h2>
+      <div class="employee-descriptions-container">
+        <div class="employee-descriptions">
+          <p>ID: ${engineersArrayElement.getId()}</p>
+        </div>
+        <div class="employee-descriptions">
+          <p>Email: ${engineersArrayElement.getEmail()}</p>
+        </div>
+        <div class="employee-descriptions">
+          <p>${engineersArrayElement.getGithub()}</p>
+        </div>\n
+        </div>
+      `
+    //     `<div>
+    //     <h1>${engineersArrayElement.getName()}</h1>
+    //     <h2>${engineersArrayElement.getRole()}</h2>
+    //   <div>
+    //      <p>${engineersArrayElement.getId()}</p> 
+    //      <p>${engineersArrayElement.getEmail()}</p>
+    //      <p>${engineersArrayElement.getGithub()}</p>
+    //   </div>
+    // </div>`
     })
    html += 
-   `</body>
+   
+   `
+   </div>
+   </body>
    </html>` 
 
    fs.writeFile(`./dist/index.html`, html, err =>{

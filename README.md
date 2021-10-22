@@ -35,3 +35,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Tests
+The tests provided are run with Jest and test whether the constructors from each file that is imported  works as it should. 
+
+To run this test cd into the folder with each test. Then run npm run test to activate jest. For example the Engineer test when passed should result in the github username, the Employee test when passed should result in the name of the employee, the manager test should result in the office number of the employee, and the intern test should result in the name of the school when passed so a total of 4 test should say passed.

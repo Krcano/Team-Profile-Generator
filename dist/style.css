@@ -3,8 +3,8 @@ header {
   border-bottom: black 5px solid;
   text-align: center;
 }
-.title{
-    height: 2em;
+.title {
+  height: 2em;
 }
 /* styling for each individual card */
 .individual-card-container {
@@ -12,12 +12,11 @@ header {
   color: white;
   width: 18em;
   margin-top: 2em;
- 
   border-radius: 15%;
   box-shadow: rgb(180, 180, 180) 10px 10px 10px;
 }
-.name-role{
-    padding-left: 1em;
+.name-role {
+  padding-left: 1em;
 }
 /* styling for all the cards together */
 .all-card-container {
@@ -31,13 +30,12 @@ header {
   background-color: rgb(248, 234, 232);
   padding: 2em;
   border-radius: 0% 0% 15% 15%;
-  
 }
 /* styling for the individual description boxes */
 .employee-descriptions {
   background-color: white;
   color: black;
   border: solid rgb(73, 32, 28) 1px;
-  margin: .5em;
-  padding-left: .5em;
+  margin: 0.5em;
+  padding-left: 0.5em;
 }

@@ -56,7 +56,6 @@ function createManager() {
       },
     ])
     .then((data) => {
-     
       let newManager = new Manager(
         data.Employeename,
         data.EmployeeId,
@@ -163,20 +162,20 @@ function createHtml() {
         </header>
         <div class="all-card-container">
        `;
-  managers.forEach((engineersArrayElement) => {
+  managers.forEach((managersArrayElement) => {
     html += `
     <div class="individual-card-container">
-    <h1 class="name-role">${engineersArrayElement.getName()}</h1>
-    <h2 class="name-role">${engineersArrayElement.getRole()}</h2>
+    <h1 class="name-role">${managersArrayElement.getName()}</h1>
+    <h2 class="name-role">${managersArrayElement.getRole()}</h2>
   <div class="employee-descriptions-container">
     <div class="employee-descriptions">
-      <p>ID: ${engineersArrayElement.getId()}</p>
+      <p>ID: ${managersArrayElement.getId()}</p>
     </div>
     <div class="employee-descriptions">
-      <p>Email: <a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
+      <p>Email: <a href=mailto:${managersArrayElement.getEmail()}>${managersArrayElement.getEmail()}</a></p>
     </div>
     <div class="employee-descriptions">
-      <p>Office: ${engineersArrayElement.getOfficeNumber()}</p>
+      <p>Office: ${managersArrayElement.getOfficeNumber()}</p>
     </div>
     </div>
     </div>`;
@@ -200,20 +199,19 @@ function createHtml() {
         </div>
       `;
   });
-  interns.forEach((engineersArrayElement) => {
-    html += 
-    `<div class="individual-card-container">
-    <h1 class="name-role">${engineersArrayElement.getName()}</h1>
-    <h2 class="name-role">${engineersArrayElement.getRole()}</h2>
+  interns.forEach((internsArrayElement) => {
+    html += `<div class="individual-card-container">
+    <h1 class="name-role">${internsArrayElement.getName()}</h1>
+    <h2 class="name-role">${internsArrayElement.getRole()}</h2>
   <div class="employee-descriptions-container">
     <div class="employee-descriptions">
-      <p>ID: ${engineersArrayElement.getId()}</p>
+      <p>ID: ${internsArrayElement.getId()}</p>
     </div>
     <div class="employee-descriptions">
-    <p>Email: <a href=mailto:${engineersArrayElement.getEmail()}>${engineersArrayElement.getEmail()}</a></p>
+    <p>Email: <a href=mailto:${internsArrayElement.getEmail()}>${internsArrayElement.getEmail()}</a></p>
     </div>
     <div class="employee-descriptions">
-      <p>School: ${engineersArrayElement.getSchool()}</p>
+      <p>School: ${internsArrayElement.getSchool()}</p>
     </div>
     </div>
     </div>`;

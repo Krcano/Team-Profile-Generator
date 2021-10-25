@@ -4,7 +4,10 @@
 
 ## Description
 
-This project uses Node.js to create an app where an employer can create profiles for each member of their team(manager, engineer, or intern). The profiles include their employee id, email and depending on their role it will show their office number, github username, or the school they attended.
+This project uses Node.js to create an app where an employer can create profiles for each member of their team(manager, engineer, or intern). The profiles include their employee id, email and depending on their role it will show their office number, github username, or the school they attended. 
+![](./screenshot.png)
+
+[Video Description](https://drive.google.com/file/d/1AKfvNzie51tND302a7FhlaYqAXqM6YBt/view)
 
 ## Installation
 
